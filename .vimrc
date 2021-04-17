@@ -1,8 +1,12 @@
 set autoread
 let python_highlight_all=1
 syntax on
+
+" call python to run the file
 autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+
+" set the format options
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -30,11 +34,13 @@ Plugin 'gmarik/Vundle.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
 "split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
